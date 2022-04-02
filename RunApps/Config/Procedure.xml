@@ -1,0 +1,26 @@
+<Procedures>
+	<Procedure name="POSM Normal Message" >
+		<Action-list>
+			<Action type="ADD_NORMAL_EVENT" parameter="Lifeline='POSM'" />
+		</Action-list>
+	</Procedure>
+
+	<Procedure name="POSM End Message Message" >
+		<Action-list>
+			<Action type="END_MESSAGE_EVENT" parameter="Lifeline='POSM'" />
+		</Action-list>
+	</Procedure>
+	
+	<Procedure name="FLM Normal Message" >
+		<Action-list>
+			<Action type="ADD_NORMAL_EVENT" parameter="Lifeline='FLM'" />
+		</Action-list>
+	</Procedure>
+	
+	<Procedure name="FLM End Message Message" >
+		<Action-list>
+			<Action type="END_MESSAGE_EVENT" parameter="Lifeline='FLM'" />
+		</Action-list>
+	</Procedure>
+</Procedures>
+

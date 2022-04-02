@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F8050228-F796-4120-B56A-E8A89C032E76}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ResourceDLL</RootNamespace>
+    <AssemblyName>ResourceDLL</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="core\ResourceFunctionObj.cs" />
+    <Compile Include="core\ResourceManager.cs" />
+    <Compile Include="core\ResourceManager.ParseDataObj.cs">
+      <DependentUpon>ResourceManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="core\ResourceRequest.cs" />
+    <Compile Include="core\ResourceFunctionObj.AttributeClass.cs">
+      <DependentUpon>ResourceFunctionObj.cs</DependentUpon>
+    </Compile>
+    <Compile Include="core\ResourceRequest.RequestData.cs">
+      <DependentUpon>ResourceRequest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="core\ResourceWorker.cs" />
+    <Compile Include="core\ResourceWorker.resources.cs">
+      <DependentUpon>ResourceWorker.cs</DependentUpon>
+    </Compile>
+    <Compile Include="hook\SequentialTBEventArgs.cs" />
+    <Compile Include="hook\SequentialTBHook.cs" />
+    <Compile Include="worker\DataFeedWorker.cs" />
+    <Compile Include="worker\GraphicWorker.cs" />
+    <Compile Include="worker\ParseEngineController.cs" />
+    <Compile Include="worker\ParseWorker.cs" />
+    <Compile Include="core\ResourceManager.PatternObjStruct.cs">
+      <DependentUpon>ResourceManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="worker\PatternWorker.cs" />
+    <Compile Include="worker\ProcedureWorker.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="core\ResourceManager.XMLHelper.cs">
+      <DependentUpon>ResourceManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="core\ResourceManager.ProcObjData.cs">
+      <DependentUpon>ResourceManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="xml_struct\ParseTableXMLBlueprint.cs" />
+    <Compile Include="xml_struct\ProcedureXMLBlueprint.ExpressionHelper.cs">
+      <DependentUpon>ProcedureXMLBlueprint.cs</DependentUpon>
+    </Compile>
+    <Compile Include="xml_struct\PatternXMLBlueprint.cs" />
+    <Compile Include="xml_struct\ProcedureXMLBlueprint.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CoreDLL\CoreDLL.csproj">
+      <Project>{466807C4-4273-44E6-A115-48D7ED5B5493}</Project>
+      <Name>CoreDLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GraphicDLL\GraphicDLL.csproj">
+      <Project>{3F889934-C6CB-4E52-97C5-EAE04197F508}</Project>
+      <Name>GraphicDLL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

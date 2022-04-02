@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3F889934-C6CB-4E52-97C5-EAE04197F508}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GraphicDLL</RootNamespace>
+    <AssemblyName>GraphicDLL</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="common\clsGUIEventTypes.cs" />
+    <Compile Include="common\clsObjLLEvent.cs" />
+    <Compile Include="common\iPageRequest.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="common\XControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="XControls\XControlLifelineLinker.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="XControls\XControl_FilePathLoader.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="XControls\XControl_LifeLine.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="XControls\XControl_LifeLineBody.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="XControls\XControl_TimestampSlice.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="XPanels\XPanel_ActivityPane.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="XPanels\XPanel_LifeLinePane.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="common\SharedResource.cs" />
+    <Compile Include="common\XPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="XPanels\XPanel_EventPane.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="XPanels\XPanel_FilterPane.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="XPanels\XPanel_LoadingPane.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="XPanels\XPanel_LoadLogPane.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="XPanels\XPanel_Main.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="XPanels\XPanel_TimestampPane.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="XPanels\XResizablePanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GraphicEngine.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CoreDLL\CoreDLL.csproj">
+      <Project>{466807C4-4273-44E6-A115-48D7ED5B5493}</Project>
+      <Name>CoreDLL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\loading.gif" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

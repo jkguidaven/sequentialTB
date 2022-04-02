@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<parse-table>
+	<parse-data name="State" 	start-regex="\s*(State | IState)\s*=\s*" 	end-regex="\n"/>
+	<parse-data name="Message" 	start-regex="\s*(Message | IMessage)\s*=\s*" end-regex="\n" />
+	<parse-data name="Action" 	start-regex="\s*(Action)\s*=\s*" end-regex="\n" />
+	<parse-data name="XMLParam" 	start-regex="\s*(XML Parms)\s*=\s*" end-regex="\n" />
+	<parse-data name="FilePath" regex="c:(\\\w*)+.xml(:\w+)" />
+	<parse-data name="Expression" start-regex="(if expression\()|(When\([^\)]*\)\s*=\s*)" end-regex="[\)]*\n" />
+</parse-table>

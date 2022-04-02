@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<patterns>
+	
+	<pattern name="POSM_LinkReceiverEvent_POS" priority="5" >
+		<regex value="^POSM:\s*\d{2}/\d{2}\s*\d{2}:\d{2}:\d{2}\s*(\d{2},)*\d{3},\d{3}\s*\w{4}>\s*" />
+		<regex value="(__*).*(lookup-table-name=)\s*(POSAutomationCommands)" />
+		<procedure name="POSM Normal Message" />
+		<parse-table>
+			<parse-data name="State" />
+			<parse-data name="Message" />
+		</parse-table>
+	</pattern>
+	
+	<pattern name="POS_NORMAL_EVENT" >
+		<regex value="^POSM:\s*\d{2}/\d{2}\s*\d{2}:\d{2}:\d{2}\s*(\d{2},)*\d{3},\d{3}\s*\w{4}>\s*(__*).*" />
+		<procedure name="POSM Normal Message" />
+		<parse-table>
+			<parse-data name="State" />
+			<parse-data name="Message" />
+			<parse-data name="Expression" />
+			<parse-data name="FilePath" />
+			<parse-data name="XMLParam" />
+			<parse-data name="Action" />
+		</parse-table>
+	</pattern>
+	
+	<pattern name="POSM_END_MESSAGE_EVENT" priority="5">
+		<regex value="^POSM:\s*\d{2}/\d{2}\s*\d{2}:\d{2}:\d{2}\s*(\d{2},)*\d{3},\d{3}\s*\w{4}>\s*" />
+		<regex value="Message complete:" />
+		<procedure name="POSM End Message Message" />
+	</pattern>
+	
+	<pattern name="FLM_NORMAL_EVENT" >
+		<regex value="^FLM:\s*\d{2}/\d{2}\s*\d{2}:\d{2}:\d{2}\s*(\d{2},)*\d{3},\d{3}\s*\w{4}>\s*(__*).*" />
+		<procedure name="FLM Normal Message" />
+		<parse-table>
+			<parse-data name="State" />
+			<parse-data name="Message" />
+			<parse-data name="Expression" />
+			<parse-data name="FilePath" />
+			<parse-data name="XMLParam" />
+			<parse-data name="Action" />
+		</parse-table>
+	</pattern>
+	
+	<pattern name="FLM_END_MESSAGE_EVENT" priority="5">
+		<regex value="^FLM:\s*\d{2}/\d{2}\s*\d{2}:\d{2}:\d{2}\s*(\d{2},)*\d{3},\d{3}\s*\w{4}>\s*" />
+		<regex value="Message complete:" />
+		<procedure name="FLM End Message Message" />
+	</pattern>
+</patterns>
